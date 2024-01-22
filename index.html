@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer </title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="icon" href="./img/despertador.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <nav class="row navbar bg-body-tertiary bg-danger">
+        <div class="container-fluid ">
+                <a class="navbar-brand d-flex justify-content-center text-white " href="index.html">Pomodoro Timer</a>
+                <span class="navbar-brand mb-0 h1"></span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row d-flex justify-content-center mt-5 mb-5">
+            <div id="configuracoes" class="col-md-10">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <form>
+                            <label for="acao" class="d-flex justify-content-center text-black"
+                                style="font-size: x-large;">Minutos</label>
+                            <input type="number"
+                                class=" d-flex justify-content-center form-control form-control-lg bg-danger border-0 text-white"
+                                id="acao" aria-required="true">
+                            <small class="text-danger" id="erro-acao"></small>
+                        </form>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <form>
+                            <label for="pausa" class=" d-flex justify-content-center text-black  form-label"
+                                style="font-size: x-large;">Pausas</label>
+                            <input type="number"
+                                class=" d-flex justify-content-center form-control form-control-lg bg-danger border-0 text-white"
+                                id="pausa" aria-required="true">
+                            <small class="text-danger" id="erro-pausa"></small>
+                        </form>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <form>
+                            <label for="sessoes" class=" d-flex justify-content-center text-black form-label"
+                                style="font-size: x-large;">Sessões</label>
+                            <input type="number"
+                                class="d-flex justify-content-center form-control form-control-lg bg-danger border-0 text-white"
+                                id="sessoes" aria-required="true">
+                            <small class="text-danger" id="erro-sessoes"></small>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row mt-5 mb-5 d-flex justify-content-center">
+                    <div class="col-9">
+                        <button onclick="iniciar()" type="button"
+                            class="btn btn-danger shadow btn-lg btn-block">INICIAR</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- /configurações -->
+        <div id="timer" class="mt-0 d-flex justify-content-center">
+
+            <div class="row mb-3">
+                <div class="col">
+                    <h3 id="title" class="text-center"></h3>
+                </div>
+            </div>
+
+            <div class="row shadow time">
+                <div class="col-5 p-0">
+                    <h2 id="minutos-ok" style="color:black;"></h2>
+                </div>
+                <div class="col-1 p-0 d-flex justify-content-center">
+                    <h2 style="color:black;">:</h2>
+                </div>
+                <div class="col-5 pl-0">
+                    <h2 id="segundos-ok" style="color: black;"></h2>
+                </div>
+            </div>
+
+            <div class="row mb-3 mt-5">
+                <div class="col">
+                    <h3 id="title_sessao" class="text-center text-secondary"></h3>
+                </div>
+            </div>
+
+            <div class="text-center row">
+                <div class="col-md-6">
+                    <h4 class="fw-bold">Controle a musica:</h4>
+                    <a onclick="pausar_musica()">
+                        <i id="pause" class="fa fa-pause text-black" style="font-size: 50pt; display: none;"
+                            aria-hidden="true" alt="Dê Pause na musica"></i>
+                        <!-- <img id="play" src="img/botao-play.png" alt="" width="45px" height="45px" style="display: none;"> -->
+                    </a>
+                    <a onclick="executar()">
+                        <i id="play" class="fa fa-play text-black" style="font-size: 50pt; display: none;"
+                            aria-hidden="true" alt="Dê Play na musica"></i>
+                        <!-- <img id="pause" src="img/botao-pause.png" alt="" width="45px" height="45px" style="display: none;"> -->
+                    </a>
+                    <audio id="forest-lullaby" src="./audios/forest-lullaby.mp3" type="audio/img"></audio>
+                </div>
+                <div class="col-md-6">
+
+                    <h4 class="fw-bold">Retorne para a pagina inicial: </h4>
+                    <a href="index.html">
+                        <img src="img/home.svg" alt="Retorno para a pagina inicial" height="50px;" width="50px;">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="fim" style="display: none;">
+            <h1 class="text-center text-success">Parabéns! Espero que você tenha finalizado sua tarefa com sucesso!</h1>
+            <div class="row mt-5 mb-5 d-flex justify-content-center">
+                <div class="col-md-9 d-flex justify-content-center">
+                    <a href="index.html" class="btn btn-danger shadow btn-lg" >Inicio</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
